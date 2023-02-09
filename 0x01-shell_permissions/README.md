@@ -1,1 +1,1 @@
-sets Other users: all the permissions
+a script that sets the mode of the file
