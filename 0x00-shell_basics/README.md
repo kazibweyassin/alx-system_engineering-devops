@@ -1,1 +1,1 @@
- script that moves all files beginning with an uppercase letter to the directory
+but i have to be software engineer
