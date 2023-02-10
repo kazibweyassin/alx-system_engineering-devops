@@ -1,1 +1,1 @@
-Deleting
+directory is deleted
