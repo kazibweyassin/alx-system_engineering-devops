@@ -1,1 +1,1 @@
-only if it is owned by the user
+a script that will play the StarWars IV
