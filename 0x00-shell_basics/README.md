@@ -1,1 +1,1 @@
-creating a directory
+moving a directory
