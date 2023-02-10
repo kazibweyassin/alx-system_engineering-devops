@@ -1,1 +1,1 @@
-Create a script that adds execute permission to all
+with permissions 751
