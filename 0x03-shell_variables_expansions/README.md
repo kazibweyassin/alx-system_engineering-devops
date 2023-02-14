@@ -1,1 +1,1 @@
-Creating a anew loca variable
+Creating a anew Global variable
