@@ -1,1 +1,1 @@
-'listing global variables'
+prints all variables
