@@ -1,1 +1,1 @@
-alias
+This print te currrent user
