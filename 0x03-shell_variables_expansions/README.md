@@ -1,1 +1,1 @@
-counting
+'listing global variables'
