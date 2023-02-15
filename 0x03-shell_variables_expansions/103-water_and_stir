@@ -1,0 +1,2 @@
+#!/bin/bash
+WATER=1010 STIR=110 ./add_water_stir.sh
