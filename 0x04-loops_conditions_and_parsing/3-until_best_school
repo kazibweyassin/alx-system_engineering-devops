@@ -4,5 +4,5 @@ x="0"
 until [ $x -ge 10 ]
 do
  echo "Best school"
- x=$((x++))
+ x=$((x+1))
 done
