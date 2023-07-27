@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #This will display Best School 10 times.
-x=1
-until [ $x -gt 10 ]
+x="0"
+until [ $x -ge 10 ]
 do
  echo "Best school"
- ((x++))
+ x=$((x++))
 done
