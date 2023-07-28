@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#This bash script dispays a string 10 times using while and if loo
+i="0"
+while [ $i -lt 10 ]
+do
+  echo "Best School"
+  if [ "$i" == "8" ]; then
+    echo "Hi"
+  fi
+  i=$((i+1))
+done
