@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# ssh into the server with a private rsa key
+
+ssh -i ~/.ssh/school ubuntu@18.234.105.37
