@@ -13,8 +13,8 @@ frontend kazibweyassin.tech
 
 backend web_servers
         balance roundrobin
-        server 64820-web-01 3.83.245.138
-        server 64820-web-02 34.239.248.8
+        server 272417-web-01 3.83.245.138
+        server 272417-web-02 34.239.248.8
 ' >> /etc/haproxy/haproxy.cfg
 
 # Restart HAproxy service
