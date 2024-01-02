@@ -8,7 +8,7 @@ import json
 def main():
     """Gather data from an API"""
     
-    userID = argv[1]
+    user_id = argv[1]
     user = 'https://jsonplaceholder.typicode.com/users/{}'.format(userID)
     todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(userID)
     name = requests.get(user).json().get('name')
@@ -23,9 +23,9 @@ def main():
         if task.get('completed') is True:
             print('\t {}'.format(task.get('title')))
             
-    with open('{}.csv'.format(userID), 'w') as f:
+    with open('{}.csv'.format(user_id), 'w') as f:
         for task in tasks:
-            f.write('"{}","{}","{}","{}"\n'.format(userID, name, task.get('completed'), task.get('title')))
+            f.write('"{}","{}","{}","{}"\n'.format(user_id, name, task.get('completed'), task.get('title')))
             
             
 if __name__ == "__main__":
