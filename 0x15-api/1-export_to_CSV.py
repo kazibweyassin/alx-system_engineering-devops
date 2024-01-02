@@ -1,33 +1,30 @@
-#!/usr/bin/env python3
-"""Gather data from an API"""
-
+#!/usr/bin/python3
+"""Export data about a user and tasks to json"""
+import json
 import requests
 from sys import argv
-import json
 
-def main():
-    """Gather data from an API"""
-    
-    user_id = argv[1]
-    user = 'https://jsonplaceholder.typicode.com/users/{}'.format(userID)
-    todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(userID)
-    name = requests.get(user).json().get('name')
-    tasks = requests.get(todo).json()
-    total_tasks = len(tasks)
-    completed_tasks = 0
-    for task in tasks:
-        if task.get('completed') is True:
-            completed_tasks += 1
-    print('Employee {} is done with tasks({}/{}):'.format(name, completed_tasks, total_tasks))
-    for task in tasks:
-        if task.get('completed') is True:
-            print('\t {}'.format(task.get('title')))
-            
-    with open('{}.csv'.format(user_id), 'w') as f:
-        for task in tasks:
-            f.write('"{}","{}","{}","{}"\n'.format(user_id, name, task.get('completed'), task.get('title')))
-            
-            
 if __name__ == "__main__":
-    if len(argv) == 2:
-        main()
+    url = "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1]
+    resp = requests.get(url)
+    tasks = resp.json()
+    url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
+    resp = requests.get(url)
+    user = resp.json()
+
+    user_id = str(argv[1])
+    username = user.get("username")
+
+    new_tasks = []
+    new_task = {}
+    for task in tasks:
+        new_task["task"] = task.get("title")
+        new_task["completed"] = task.get("completed")
+        new_task["username"] = username
+        new_tasks.append(new_task)
+        new_task = {}
+
+    my_json = {}
+    my_json[user_id] = new_tasks
+    with open(user_id + ".json", "w") as f:
+        json.dump(my_json, f)
