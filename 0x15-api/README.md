@@ -1,0 +1,1 @@
+An application program interface, is a set of routines, protocals and tools for building software application. APIs specifies how software components should interact. 
