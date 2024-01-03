@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Get the todo list for one user and print info"""
-import requests
 from sys import argv
+import requests
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1]
