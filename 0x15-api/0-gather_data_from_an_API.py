@@ -1,20 +1,13 @@
 #!/usr/bin/python3
 """Get the todo list for one user and print info"""
-
 import requests
 from sys import argv
 
 if __name__ == "__main__":
-    try:
-        user_id = argv[1]
-    except IndexError:
-        print("Please provide a user ID as a command-line argument.")
-        exit()
-
-    url = "https://jsonplaceholder.typicode.com/todos?userId=" + user_id
+    url = "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1]
     resp = requests.get(url)
     tasks = resp.json()
-    url = "https://jsonplaceholder.typicode.com/users/" + user_id
+    url = "https://jsonplaceholder.typicode.com/users/" + argv[1]
     resp = requests.get(url)
     user = resp.json()
 
