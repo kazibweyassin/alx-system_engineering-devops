@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Export data about a user and tasks to json"""
-from sys import argv
 import json
-import requests
+from sys import argv
 
+import requests
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/todos?userId=" + argv[1]
