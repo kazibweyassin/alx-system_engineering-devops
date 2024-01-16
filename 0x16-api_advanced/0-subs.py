@@ -1,19 +1,13 @@
 #!/usr/bin/python3
-# get subs
-from requests import get
+"""Return the number of subscribers to a subreddit"""
+import requests
 from sys import argv
 
 
 def number_of_subscribers(subreddit):
-    """subs"""
-    head = {'User-Agent': 'Yassin Kazibwe'}
-    count = get('https://www.reddit.com/r/{}/about.json'.format(
-        subreddit), headers=head).json()
-    try:
-        return count.get('data').get('subscribers')
-    except Exception as e:
-        return 0
-
-
-if __name__ == "__main__":
-    number_of_subscribers(argv[1])
+    url = "https://reddit.com/r/" + subreddit + "/about.json"
+    ua = {'User-agent': 'Mozilla/5.0'}
+    resp = requests.get(url, headers=ua)
+    data = resp.json().get("data", {"subscribers": 0})
+    subs = data.get("subscribers", 0)
+    return subs
